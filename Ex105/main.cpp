@@ -1,6 +1,7 @@
+//http://blog.csdn.net/sbitswc/article/details/26433051
 #include <iostream>
 #include <vector>
-#include <map>
+
 using namespace std;
 struct TreeNode {
      int val;
@@ -10,16 +11,16 @@ struct TreeNode {
 };
 class Solution {
 public:
-	TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-		if (preorder.size() == 0)
+	TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
+		if (inorder.size() == 0)
 			return NULL;
-		return build(preorder,inorder, 0,preorder.size(),0,inorder.size());
+		return build(inorder, postorder, 0, inorder.size(),0, postorder.size());
 	}
 
-	TreeNode* build(vector<int>& preorder, vector<int>& inorder, int preStart, int preEnd, int inStart, int inEnd) {
-		if (preStart == preEnd)
+	TreeNode* build(vector<int>& inorder, vector<int>& postorder, int inStart, int inEnd, int postStart, int postEnd) {
+		if (inStart == inEnd)
 			return NULL;
-		 auto res = new TreeNode(preorder[preStart]);
+		 auto res = new TreeNode(postorder[postEnd-1]);
 		 int len = 0;
 		 for (int i = inStart; i < inEnd; i++) {
 			 if (inorder[i] == (*res).val) {
@@ -27,17 +28,17 @@ public:
 				 break;
 			 }
 		 }
-		 (*res).left = build(preorder, inorder, preStart+1, preStart+len+1,inStart,inStart+len);
-		 (*res).right = build(preorder, inorder, preStart + len + 1,preEnd, inStart+len+1,inEnd );
+		 (*res).left = build(inorder, postorder, inStart, inStart +len,postStart,postStart+len);
+		 (*res).right = build(inorder, postorder, inStart + len + 1,inEnd, postStart+len,postEnd-1 );
 		 return res;
 	}
 
 	//for test
-	void preorder(TreeNode* t) {
+	void postorder(TreeNode* t) {
 		if (t != NULL) {
+			postorder((*t).left);
+			postorder((*t).right);
 			cout << (*t).val << " ";
-			preorder((*t).left);
-			preorder((*t).right);
 		}
 		else {
 			return;
@@ -57,6 +58,7 @@ public:
 };
 
 int main() {
+
 	int preorder[] = {4,1,3,2};
 	int inorder[] = { 1,2,3,4 };
 	size_t count = sizeof(preorder) / sizeof(int);
@@ -64,7 +66,7 @@ int main() {
 	vector<int> in(inorder, inorder + count);
 	Solution s;
 	auto t=s.buildTree(pre,in);
-	s.preorder(t);
+	s.postorder(t);
 	cout << endl;
 	s.inorder(t);
 	getchar();
