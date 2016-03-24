@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex105", "Ex105\Ex105.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex106", "Ex106\Ex106.vcxproj", "{3BD6439D-76C4-47AD-B8DD-DE49BD240E03}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex78", "Ex78\Ex78.vcxproj", "{A4EB073D-7595-4C83-ABB6-5C37179BD1C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{3BD6439D-76C4-47AD-B8DD-DE49BD240E03}.Release|x64.Build.0 = Release|x64
 		{3BD6439D-76C4-47AD-B8DD-DE49BD240E03}.Release|x86.ActiveCfg = Release|Win32
 		{3BD6439D-76C4-47AD-B8DD-DE49BD240E03}.Release|x86.Build.0 = Release|Win32
+		{A4EB073D-7595-4C83-ABB6-5C37179BD1C9}.Debug|x64.ActiveCfg = Debug|x64
+		{A4EB073D-7595-4C83-ABB6-5C37179BD1C9}.Debug|x64.Build.0 = Debug|x64
+		{A4EB073D-7595-4C83-ABB6-5C37179BD1C9}.Debug|x86.ActiveCfg = Debug|Win32
+		{A4EB073D-7595-4C83-ABB6-5C37179BD1C9}.Debug|x86.Build.0 = Debug|Win32
+		{A4EB073D-7595-4C83-ABB6-5C37179BD1C9}.Release|x64.ActiveCfg = Release|x64
+		{A4EB073D-7595-4C83-ABB6-5C37179BD1C9}.Release|x64.Build.0 = Release|x64
+		{A4EB073D-7595-4C83-ABB6-5C37179BD1C9}.Release|x86.ActiveCfg = Release|Win32
+		{A4EB073D-7595-4C83-ABB6-5C37179BD1C9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
