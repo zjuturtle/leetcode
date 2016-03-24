@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{341F4916-1CB7-4856-AC4F-6FAA7246F75D}</ProjectGuid>
+    <ProjectGuid>{D9C0FC1C-E597-458C-9DA1-535C5E920001}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My337</RootNamespace>
+    <RootNamespace>Ex337</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
