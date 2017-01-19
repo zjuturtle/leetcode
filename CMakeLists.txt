@@ -15,6 +15,7 @@ endif()
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
+add_executable(Ex2 Ex2/main.cpp)
 add_executable(Ex49 Ex49/main.cpp)
 add_executable(Ex53 Ex53/main.cpp)
 add_executable(Ex62 Ex62/main.cpp)
