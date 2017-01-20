@@ -33,8 +33,8 @@ public:
 };
 
 int main() {
-	Solution s;
-	ListNode* l1 = new ListNode(5);
+    Solution s;
+    ListNode* l1 = new ListNode(5);
     //l1->next = new ListNode(4);
     //l1->next->next = new ListNode(3);
     
@@ -49,6 +49,8 @@ int main() {
         now = now->next;
     }
     
-	getchar();
-	return 0;
+    getchar();
+    return 0;
 }
+
+
