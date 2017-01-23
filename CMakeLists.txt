@@ -17,6 +17,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 add_executable(Ex002 Ex002/main.cpp)
 add_executable(Ex003 Ex003/main.cpp)
+add_executable(Ex004 Ex004/main.cpp)
 add_executable(Ex049 Ex049/main.cpp)
 add_executable(Ex053 Ex053/main.cpp)
 add_executable(Ex062 Ex062/main.cpp)
