@@ -138,7 +138,10 @@ public:
                 index2 = index2 + step;
                 
             }
-            step /= 2;
+            if (step%2 == 0)
+                step /= 2;
+            else
+                step = (step/2)+1;
             step = step == 0?1:step;
         }
     }
