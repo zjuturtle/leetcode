@@ -7,8 +7,8 @@ using namespace std;
 
 class Solution {
 private:
-    unsigned nums1Size;
-    unsigned nums2Size;
+    int nums1Size;
+    int nums2Size;
     bool     totalisEven;
     vector<int> nums1;
     vector<int> nums2;
@@ -110,14 +110,15 @@ public:
         }
     }
     
-    double findMedianSortedArrays(long index1, long index2) {
+    double findMedianSortedArrays(int index1, int index2) {
         auto data1 = getData1(index1);
         auto data2 = getData2(index2);
-        long step;
+        int step;
         if (data1 < data2)
             step = min(nums1Size - index1, index2 + 1);
         else
             step = min(index1 + 1, nums2Size - index2);
+        step = step / 2;
         while(true) {
             data1 = getData1(index1);
             data2 = getData2(index2);
@@ -128,13 +129,13 @@ public:
         
             if (data1 < data2) {
                 
-                index1 = index1 + step/2;
-                index2 = index2 - step/2;
+                index1 = index1 + step;
+                index2 = index2 - step;
                 
             } else {
                 
-                index1 = index1 - step/2;
-                index2 = index2 + step/2;
+                index1 = index1 - step;
+                index2 = index2 + step;
                 
             }
             step /= 2;
@@ -142,7 +143,7 @@ public:
         }
     }
     
-    inline int getData1(long index){
+    inline int getData1(int index){
         if (index < 0 )
             return INT_MIN;
         if (index >= nums1Size)
@@ -150,7 +151,7 @@ public:
         return nums1[index];
     }
     
-    inline int getData2(long index){
+    inline int getData2(int index){
         if (index < 0 )
             return INT_MIN;
         if (index >= nums2Size)
@@ -158,7 +159,7 @@ public:
         return nums2[index];
     }
     
-    inline double getRes(long index1, long index2) {
+    inline double getRes(int index1, int index2) {
         vector<int> tmp;
         tmp.push_back(getData1(index1-1));
         tmp.push_back(getData1(index1));
