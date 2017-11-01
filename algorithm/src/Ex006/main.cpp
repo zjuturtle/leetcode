@@ -8,11 +8,30 @@ using namespace std;
 class Solution {
 public:
     string convert(string s, int numRows) {
+        if (numRows == 1)
+            return s;
         string res;
-        res.assign(' ', s.size());
-        for (int index = 0;index < s.size();index+=numRows) {
-            for (int offset = 0;offset <numRows;offset+=1)
-                res[index+offset]=;
+        int index = 0;
+        int currentRow = 0;
+        int nextIndexOffset = 2*(numRows - currentRow - 1);
+        bool downFlag = true;
+        while (true) {
+            if (res.size() == s.size())
+                break;
+            res.push_back(s[index]);
+            if (downFlag)
+                nextIndexOffset = 2*(numRows - currentRow - 1);
+            else
+                nextIndexOffset = 2*currentRow;
+            downFlag = !downFlag;
+            if (nextIndexOffset == 0)
+                nextIndexOffset = max(2*(numRows - currentRow - 1), 2*currentRow);
+            index += nextIndexOffset;
+            if (index >= s.size()) {
+                index = ++currentRow;
+                downFlag = true;
+                continue;
+            }
         }
         return res;
     }
@@ -20,6 +39,6 @@ public:
 
 int main() {
     Solution s;
-    cout<<s.convert("PAYPALISHIRING", 3)<<endl;
+    cout<<s.convert("AB", 3)<<endl;
     return 0;
 }

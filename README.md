@@ -11,6 +11,7 @@ just leetcode practise in C++
 | 003 | Medium | Done  |
 | 004 | Hard | Low speed Done |
 | 005 | Medium | Done  |
+| 006 | Medium | Done  |
 | 049 | Medium | Done  |
 | 053 | Easy | Done  |
 | 062 | Medium | Time out Fucked   |
