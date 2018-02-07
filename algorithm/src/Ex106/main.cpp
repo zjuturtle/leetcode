@@ -1,3 +1,20 @@
+//Given inorder and postorder traversal of a tree, construct the binary tree.
+//
+//Note:
+//		You may assume that duplicates do not exist in the tree.
+//
+//For example, given
+//
+//inorder = [9,3,15,20,7]
+//postorder = [9,15,7,20,3]
+//Return the following binary tree:
+//
+//    3
+//   / \
+//  9  20
+//    /  \
+//   15   7
+
 #include <iostream>
 #include <vector>
 
@@ -6,19 +23,19 @@ struct TreeNode {
 	int val;
 	TreeNode *left;
 	TreeNode *right;
-	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+	explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 class Solution {
 public:
 	TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
 		if (preorder.size() == 0)
-			return NULL;
+			return nullptr;
 		return build(preorder, inorder, 0, preorder.size(), 0, inorder.size());
 	}
 
 	TreeNode* build(vector<int>& preorder, vector<int>& inorder, int preStart, int preEnd, int inStart, int inEnd) {
 		if (preStart == preEnd)
-			return NULL;
+			return nullptr;
 		auto res = new TreeNode(preorder[preStart]);
 		int len = 0;
 		for (int i = inStart; i < inEnd; i++) {
@@ -34,7 +51,7 @@ public:
 
 	//for test
 	void preorder(TreeNode* t) {
-		if (t != NULL) {
+		if (t != nullptr) {
 			cout << (*t).val << " ";
 			preorder((*t).left);
 			preorder((*t).right);
@@ -45,7 +62,7 @@ public:
 	}
 
 	void inorder(TreeNode* t) {
-		if (t != NULL) {
+		if (t != nullptr) {
 			inorder((*t).left);
 			cout << (*t).val << " ";
 			inorder((*t).right);

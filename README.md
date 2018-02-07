@@ -13,12 +13,14 @@ just leetcode practise in C++
 | 005 | Medium | Done  |
 | 006 | Medium | Done  |
 | 007 | Easy | Done  |
+| 008 | Medium | Done  |
 | 049 | Medium | Done  |
 | 053 | Easy | Done  |
 | 062 | Medium | Time out Fucked   |
 | 078 | Medium | Done  |
 | 105 | Medium | Fucked  |
 | 106 | Medium | Done  |
+| 112 | Easy | Done  |
 | 113 | Medium | Done  |
 | 121 | Easy | Done  |
 | 122 | Easy | Done  |
