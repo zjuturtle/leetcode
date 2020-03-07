@@ -35,7 +35,7 @@ public:
 	struct Money {
 		int pre;  //not rob this node
 		int curr; //rob this node
-		Money() :pre(0), curr(0) {}
+		explicit Money() :pre(0), curr(0) {}
 	};
 
 	int rob(TreeNode* root) {
