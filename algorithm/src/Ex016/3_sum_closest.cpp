@@ -53,9 +53,6 @@ public:
         bool lastIncreasedI = false;
         for (int i=0;i < nums.size()-2;i++) {
             for (int j=i+2;j<nums.size();j++) {
-                if (i==0 && j ==5){
-                    cout << "d";
-                }
                 int searchTarget = target - nums[i] - nums[j];
                 int searchMid = search(nums, i + 1, j - 1, searchTarget);
                 int searchDiff = abs(target - (nums[i] + nums[j] + nums[searchMid]));
