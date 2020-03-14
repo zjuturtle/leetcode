@@ -2,6 +2,7 @@
 // Created by 雷京颢 on 2020/3/14.
 //
 #include <iostream>
+#include <tuple>
 
 
 using namespace std;
@@ -15,20 +16,46 @@ struct ListNode {
 
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
-        if (!head) return nullptr;
+    struct reverseRes{
+        ListNode *head;
+    };
+
+    ListNode* reverseBetween(ListNode* head, int m, int n) {
+        if (m==n) {
+            return head;
+        }
+        int i=0;
+        ListNode* headOrigin = head;
+        ListNode* headBefore = nullptr;
+        for (int i=0;i<m-1;i++) {
+            headBefore = head;
+            head = head->next;
+        }
+
+        auto res = reverseList(head, n-m);
+
+        if (headBefore) {
+            headBefore->next = res.head;
+            return headOrigin;
+        } else {
+            return res.head;
+        }
+    }
+
+    reverseRes reverseList(ListNode* head, int length) {
         ListNode* a = nullptr;
         ListNode* b = head;
+        ListNode* originHead = head;
 
-        while(b->next){
+        for(int i=0;i<length;i++){
             auto tmp = a;
             a = b;
             b = b->next;
             a->next = tmp;
         }
-
+        originHead->next = b->next;
         b->next = a;
-        return b;
+        return reverseRes{b};
     }
 };
 
